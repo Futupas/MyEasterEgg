@@ -3,13 +3,75 @@
 <head>
     <meta charset="UTF-8" />
     <title>PanEasterEgg - безкоштовна пасхалка для вашого веб-сайту</title>
+
     <link rel="stylesheet" href="./content/highlight/styles/default.css">
+    <script src="./content/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
     <link rel="stylesheet" href="./content/styles.css">
 </head>
 <body>
-    p
+    <h1>PanEasterEgg - безкоштовна бібліотека для "пасхалок" на вашому сайті</h3>
+    <h3>Огляд</h3>
+    <p>Бібліотека "PanEasterEgg" дозволяє дуже просто, одним рядком коду, додати "пасхалку" на свій сайт. Ії автор - Олександр "Futupas" Панов.</p>
+    <h3>Завантаження</h3>
+    <p>Бібліотека є на GitHub. Також можете завантажити мінімізовану або немінімізовану версії бібліотеки. Якщо хочете допомогти розвинути проект - пропонуйте це на GitHub</p>
+    <h3>Використання</h3>
+    <p>
+        Використання "PanEasterEgg" є дуже простим. Всі налаштування робляться в HTML, JavaScript та CSS вам використовувати для цього непотрібно. Ос, що вам треба зробити:
+        <ul>
+            <li>Спочатку вам необхадно створити елементи, натискання яких буде відслідковуватись. Це можуть бути будь-яі елементи. Але у них має бути атрибут data-paneaseregg-key. Його значення - унікальний ключ натискання цього елемента.
+<pre><code class="html"><button data-paneaseregg-key="key1">Button 1</button>
+    <button data-paneaseregg-key="key2">Button 2</button>
+    <button data-paneaseregg-key="key3">Button 3</button></code></pre>
+            </li>
+            <li>Створити головний контейнер. Це иоже бути будь-який елемент, але бажано використовати div. У нього мають бути 2 обов'язкових атрибути: data-paneaseregg і data-paneaseregg-config. Перший показує, що це саме наш головний елемент, і його значення має бути "main". Другий є конфігурацією. Його значення - послідовність ключів, розділена символом "/". Якщо елементи з відповідними ключами будуть натиснуті у відовідному порядку, це вікно вспливе. В цьому контейнері створіть ще один елемент div, туди можна написати будь-що. Саме це побачить користувач, що знайде пасхалку.
+<pre><code class="html"><div data-paneaseregg="main" data-paneaseregg-config="key1/key2/key3">
+    Вітаю! Ви побачили пасхалку!
+</div></code></pre>
+            </li>
+            <li>Для того, щоб закрити контейнер, достатньо натиснути на фон. Але якщо ви хочете закривати по натисканню якогось елемента (він має знаходитись всередині головного контейнера), просто додайте йому атрибут data-paneaseregg-alert="close".
+<pre><code class="html"><button data-paneaseregg-alert="close">close</button></code></pre>                
+            </li>
+        </ul>
+    </p>
+    <h3>Приклад</h3>
+    <p>
+<pre><code class="html"><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Документ</title>
+</head>
+<body>
+    <button data-paneaseregg-key="key1">Button 1</button>
+    <button data-paneaseregg-key="key2">Button 2</button>
+    <button data-paneaseregg-key="key3">Button 3</button>
+    <button data-paneaseregg-key="key4">Button 4</button>
+    <button data-paneaseregg-key="key5">Button 5</button>
 
-    <script src="./content/highlight/highlight.pack.js"></script>
-    <script src="./content/paneasteregg.js"></script>
+    <div data-paneaseregg="main" data-paneaseregg-config="key2/key4/key3">
+        <div>
+            Вітаю! Ви знайшли пасхалку!!! <br />
+            <button data-paneaseregg-alert="close">закрити</button>
+        </div>
+    </div>
+
+    <script src="paneasteregg.min.js"></script>
+</body>
+</html></code></pre>
+
+    </p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p>
+
+    </p>
+
+
+    <script src="./content/paneasteregg.min.js"></script>
 </body>
 </html>

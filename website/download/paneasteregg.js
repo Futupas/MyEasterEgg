@@ -15,8 +15,6 @@ function CreatePanEasterEgg () {
     }
     function check () {
         var a = true;
-        // console.dir(array);
-        // console.dir(right);
         for (var i = 0; i < right.length; i++) {
             if (right[i] !== array[i]) {
                 a = false;
